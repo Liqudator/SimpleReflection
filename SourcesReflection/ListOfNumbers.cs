@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SourcesReflection
 {
+    /// <summary>
+    /// Коллекции чисел
+    /// </summary>
     public class ListOfNumbers
     {
         /// <summary>

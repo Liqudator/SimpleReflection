@@ -20,18 +20,21 @@ namespace SimpleReflection
                 // загрузка сборки SourcesReflection.dll
                 asm = Assembly.Load("SourcesReflection");
             }
-            catch (FileNotFoundException e)
+            catch (FileNotFoundException e) // не нашли указанную сборку
             {
                 Console.WriteLine(e.Message);
                 return;
             }
+            // если asm указывает на загруженную сборки
             if (asm != null)
+                // запускаем метод для работы с объектами сборки 
                 CreateUsingLateBinding(asm);
             Console.ReadLine();
         }
 
         /// <summary>
-        /// Вывод всех методов сборки, 
+        /// Метод, реализующий вывод доступных методов указанного объекта, загруженной сборки и
+        /// вызывающий его методы
         /// </summary>
         /// <param name="asm">Ссылка на загружаемую сборку</param>
         static void CreateUsingLateBinding(Assembly asm)

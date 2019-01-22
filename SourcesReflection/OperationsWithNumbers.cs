@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace SourcesReflection
 {
     /// <summary>
-    /// Базовые оперции над числами
+    /// Базовые операции над коллекциями
     /// </summary>
     public class OperationsWithNumbers
     {
         /// <summary>
-        /// Вычисление суммы чисел коллекции
+        /// Вычисление суммы чисел коллекций
         /// </summary>
         public static void Sum()
         {
@@ -21,7 +21,7 @@ namespace SourcesReflection
         }
 
         /// <summary>
-        /// Вычисление среднего арифметического чисел коллекции
+        /// Вычисление среднего арифметического чисел коллекций
         /// </summary>
         private static void Average()
         {
