@@ -39,7 +39,7 @@ namespace SimpleReflection
             try
             {
                 // получить метаданные для типа Methods
-                Type methods = asm.GetType("ListOfNumber.Methods");
+                Type methods = asm.GetType("SourcesReflection.OperationsWithNumbers");
                 
                 // создать объект methods на лету
                 var obj = Activator.CreateInstance(methods);
@@ -53,12 +53,14 @@ namespace SimpleReflection
                 }
 
                 // попытка использования public метода Add
-                MethodInfo mi1 = methods.GetMethod("Add");
-                // попытка использования private метода Sub
-                MethodInfo mi2 = methods.GetMethod("Average");
+                MethodInfo mi1 = methods.GetMethod("Sum");
                 // вызов метода Add
                 mi1.Invoke(obj, null);
+                // попытка использования private метода Average
+                MethodInfo mi2 = methods.GetMethod("Average");
                 // вызов метода Average
+                // UPD: в консоли пишет ссылка на объект не указывает на экземпляр объекта
+                // так как модификатор доступа private
                 mi2.Invoke(obj, null);
             }
             catch (Exception e)
